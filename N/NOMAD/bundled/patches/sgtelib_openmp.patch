@@ -1,6 +1,6 @@
 --- a/ext/sgtelib/CMakeLists.txt
 +++ b/ext/sgtelib/CMakeLists.txt
-@@ -98,9 +110,9 @@
+@@ -98,9 +98,9 @@
      $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>
      $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/sgtelib>
      )
@@ -13,7 +13,7 @@
  
  # build executable sgtelib_main
  add_executable(sgtelib_main ${SGTELIB_SOURCES})
-@@ -108,9 +120,9 @@
+@@ -108,9 +108,9 @@
      $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>
      $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/sgtelib>
      )
