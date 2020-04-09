@@ -14,6 +14,7 @@ sources = [
 script = raw"""
 cd $WORKSPACE/srcdir/Csdp*
 
+atomic_patch -p1 "${WORKSPACE}/srcdir/patches/blegat.patch"
 atomic_patch -p1 "${WORKSPACE}/srcdir/patches/makefile.patch"
 
 if [[ ${nbits} == 32 ]]; then
