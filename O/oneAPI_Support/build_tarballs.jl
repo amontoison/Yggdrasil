@@ -9,8 +9,46 @@ generic_sources = [
 ]
 
 platform_sources = Dict(
-    # these are the deps installed by Anaconda for dpcpp_linux-64 and mkl-devel-dpcpp
-    # https://conda.anaconda.org/intel/linux-64
+    # These are the deps installed by Anaconda for dpcpp_linux-64 and mkl-devel-dpcpp:
+    #     package                    |            build
+    #     ---------------------------|-----------------
+    #     compiler_shared-2025.2.0   |        intel_766       115.9 MB  https://software.repos.intel.com/python/conda
+    #     dpcpp-cpp-rt-2025.2.0      |        intel_766          19 KB  https://software.repos.intel.com/python/conda
+    #     dpcpp_impl_linux-64-2025.2.0|        intel_766       185.0 MB  https://software.repos.intel.com/python/conda
+    #     dpcpp_linux-64-2025.2.0    |        intel_766          20 KB  https://software.repos.intel.com/python/conda
+    #     intel-cmplr-lib-rt-2025.2.0|        intel_766        31.5 MB  https://software.repos.intel.com/python/conda
+    #     intel-cmplr-lib-ur-2025.2.0|        intel_766         6.9 MB  https://software.repos.intel.com/python/conda
+    #     intel-cmplr-lic-rt-2025.2.0|        intel_766          18 KB  https://software.repos.intel.com/python/conda
+    #     intel-opencl-rt-2025.2.0   |        intel_766        70.0 MB  https://software.repos.intel.com/python/conda
+    #     intel-openmp-2025.2.0      |        intel_766        48.5 MB  https://software.repos.intel.com/python/conda
+    #     intel-sycl-rt-2025.2.0     |        intel_766        70.0 MB  https://software.repos.intel.com/python/conda
+    #     kernel-headers_linux-64-4.18.0|       he073ed8_8         1.2 MB  conda-forge
+    #     libgcc-15.1.0              |       h767d61c_3         806 KB  conda-forge
+    #     libgcc-ng-15.1.0           |       h69a702a_3          28 KB  conda-forge
+    #     libgomp-15.1.0             |       h767d61c_3         437 KB  conda-forge
+    #     libstdcxx-15.1.0           |       h8f9b012_3         3.7 MB  conda-forge
+    #     libstdcxx-ng-15.1.0        |       h4852527_3          28 KB  conda-forge
+    #     mkl-2025.2.0               |        intel_628       117.2 MB  https://software.repos.intel.com/python/conda
+    #     mkl-devel-2025.2.0         |        intel_628          29 KB  https://software.repos.intel.com/python/conda
+    #     mkl-devel-dpcpp-2025.2.0   |        intel_628       104.4 MB  https://software.repos.intel.com/python/conda
+    #     mkl-dpcpp-2025.2.0         |        intel_628          15 KB  https://software.repos.intel.com/python/conda
+    #     mkl-include-2025.2.0       |        intel_628         693 KB  https://software.repos.intel.com/python/conda
+    #     onemkl-sycl-blas-2025.2.0  |        intel_628        13.4 MB  https://software.repos.intel.com/python/conda
+    #     onemkl-sycl-datafitting-2025.2.0|        intel_628         1.3 MB  https://software.repos.intel.com/python/conda
+    #     onemkl-sycl-dft-2025.2.0   |        intel_628         2.6 MB  https://software.repos.intel.com/python/conda
+    #     onemkl-sycl-include-2025.2.0|        intel_628         148 KB  https://software.repos.intel.com/python/conda
+    #     onemkl-sycl-lapack-2025.2.0|        intel_628         7.0 MB  https://software.repos.intel.com/python/conda
+    #     onemkl-sycl-rng-2025.2.0   |        intel_628        14.8 MB  https://software.repos.intel.com/python/conda
+    #     onemkl-sycl-sparse-2025.2.0|        intel_628        14.9 MB  https://software.repos.intel.com/python/conda
+    #     onemkl-sycl-stats-2025.2.0 |        intel_628         4.5 MB  https://software.repos.intel.com/python/conda
+    #     onemkl-sycl-vm-2025.2.0    |        intel_628        32.8 MB  https://software.repos.intel.com/python/conda
+    #     sysroot_linux-64-2.28      |       h4ee821c_8        23.1 MB  conda-forge
+    #     tbb-2022.2.0               |        intel_507         1.4 MB  https://software.repos.intel.com/python/conda
+    #     tbb-devel-2022.2.0         |        intel_507         1.6 MB  https://software.repos.intel.com/python/conda
+    #     tcm-1.4.0                  |        intel_345         690 KB  https://software.repos.intel.com/python/conda
+    #     umf-0.11.0                 |        intel_394         110 KB  https://software.repos.intel.com/python/conda
+    #     ------------------------------------------------------------
+
     Platform("x86_64", "linux"; libc="glibc") => [
         FileSource(
             "https://software.repos.intel.com/python/conda/linux-64/compiler_shared-2025.1.0-intel_973.conda",
